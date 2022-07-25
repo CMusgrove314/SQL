@@ -1,0 +1,11 @@
+
+
+
+
+-- Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
+SELECT DISTINCT location, count(orderID)
+FROM BIT_DB.JanSales
+WHERE location like '%NY%'
+GROUP BY location 
+HAVING count(orderID) >= 3
+
