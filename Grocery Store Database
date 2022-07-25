@@ -29,8 +29,4 @@ ORDER BY aisle asc;
 -- display average price of items in aisle 3
 SELECT avg(price) FROM store WHERE aisle = "3";
 
---list all the products sold in Los Angeles in February, and include how many of each were sold. 
-SELECT DISTINCT product, SUM(Quantity) as Quantity_sold
-FROM BIT_DB.FebSales
-WHERE location like '%Los Angeles%'
-GROUP BY product
+
