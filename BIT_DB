@@ -36,3 +36,21 @@ FROM BIT_DB.JanSales
 GROUP BY product
 ORDER BY Revenue DESC LIMIT 1
 
+--Find the account numbers, the count of order IDs, product, quantity, price, order date, and location for all orders that were placed in February.
+SELECT 
+customers.acctnum, 
+COUNT(FebSales.orderID) as NumberOfOrders, 
+FebSales.Product, 
+FebSales.Quantity, 
+FebSales.price,
+FebSales.orderdate, 
+FebSales.location
+FROM BIT_DB.customers
+INNER JOIN BIT_DB.FebSales ON customers.order_id = FebSales.orderID
+GROUP BY
+customers.acctnum, 
+FebSales.Product, 
+FebSales.Quantity, 
+FebSales.price,
+FebSales.orderdate, 
+FebSales.location;
