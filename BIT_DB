@@ -1,4 +1,4 @@
---list all the products sold in Los Angeles in February, and include how many of each were sold. 
+-- List all the products sold in Los Angeles in February, and include how many of each were sold. 
 SELECT DISTINCT product, SUM(Quantity) as Quantity_sold
 FROM BIT_DB.FebSales
 WHERE location like '%Los Angeles%'
@@ -36,7 +36,7 @@ FROM BIT_DB.JanSales
 GROUP BY product
 ORDER BY Revenue DESC LIMIT 1
 
---Find the account numbers, the count of order IDs, product, quantity, price, order date, and location for all orders that were placed in February.
+-- Find the account numbers, the count of order IDs, product, quantity, price, order date, and location for all orders that were placed in February.
 SELECT 
 customers.acctnum, 
 COUNT(FebSales.orderID) as NumberOfOrders, 
@@ -54,3 +54,4 @@ FebSales.Quantity,
 FebSales.price,
 FebSales.orderdate, 
 FebSales.location;
+
